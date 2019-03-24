@@ -32,11 +32,11 @@ class Food extends Component {
 	}
 	getData(selectCata){
 		let count = Math.round(Math.random()*2);
-		let imgurl = `../../assets/img/${count}.jpg`;
+//		let imgurl = `../../assets/img/${count}.jpg`;
 		return Array.from(Array(Math.round(Math.random()*20)),(v,k)=>
 			({	sole: Math.round(Math.random()*50),
 				price: Math.round(Math.random()*20),
-				img: imgurl,
+				img: count,
 				pid:selectCata.id,
 				id:selectCata.id+"_"+k,
 				title:"分类"+selectCata.id+"菜品"+(k+1)
@@ -44,13 +44,13 @@ class Food extends Component {
 		)
 	}
 	render () {
-		let {current,tabList,currentList} = this.state;
+		let {current,tabList,currentList,selectCata} = this.state;
 		return (<View>
 			<AtTabs current={current} tabList={tabList} onClick={this.changeTab.bind(this)}>
                 <AtTabsPane>
                 	<View className="food_body">
                 		<Cata onChangeCata={this.changeCata.bind(this)}/>
-                		<FoodList currentList={currentList} />
+                		<FoodList selectCata={selectCata} currentList={currentList} />
                 	</View>
          		</AtTabsPane>
          		<AtTabsPane>
