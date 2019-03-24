@@ -18,9 +18,9 @@ class FoodList extends Component {
 	}
 	render () {
 		let {selectCata,currentList} = this.props;
-		console.log(selectCata,currentList)
+		// console.log(selectCata,currentList)
 	    return (<View className="foodlist">
-			<Text>{selectCata?selectCata.name:"主食"}</Text>
+			<Text>{selectCata?selectCata.name:"66"}</Text>
 			<View className="foodlist_forlist">
 				{
 					currentList.map((item,index)=>{

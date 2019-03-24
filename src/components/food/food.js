@@ -12,7 +12,8 @@ class Food extends Component {
 			current: 0,
 			tabList: [{title: '点菜'},{title: '评价'},{title: '商家'}],
 			foodlist: [],
-			currentList: []
+			currentList: [],
+			selectCata: []
 		};
 	}
 	changeTab (value) {
@@ -20,6 +21,7 @@ class Food extends Component {
 	}
 	// 切换分类
 	changeCata(selectCata){
+		
 		if(this.state.foodlist.some(item=>item.pid==selectCata.id)){
 			// 不加载
 			this.setState({currentList:this.state.foodlist.filter(item=>item.pid==selectCata.id)})
@@ -29,6 +31,8 @@ class Food extends Component {
 				this.setState({currentList:this.state.foodlist.filter(item=>item.pid==selectCata.id)})
 			});
 		}
+		this.setState({selectCata: selectCata})
+		// console.log('1',selectCata)
 	}
 	getData(selectCata){
 		let count = Math.round(Math.random()*2);
