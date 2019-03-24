@@ -33,7 +33,7 @@ class Food extends Component {
 	getData(selectCata){
 		let count = Math.round(Math.random()*2);
 //		let imgurl = `../../assets/img/${count}.jpg`;
-		return Array.from(Array(Math.round(Math.random()*20)),(v,k)=>
+		return Array.from(Array(Math.round(Math.random()*10)),(v,k)=>
 			({	sole: Math.round(Math.random()*50),
 				price: Math.round(Math.random()*20),
 				img: count,
